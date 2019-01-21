@@ -1,0 +1,9 @@
+History of Digital Synthesis - https://ccrma.stanford.edu/~jos/kna/kna.html
+
+Digital Waveguide Synthesis - https://ccrma.stanford.edu/~jos/wg.html
+
+Synthesized Musical Instruments - https://ccrma.stanford.edu/~jos/jnmr/Synthesized_Musical_Instruments.html
+
+Spectral Envelopes - http://recherche.ircam.fr/anasyn/schwarz/da/specenv/Spectral_Envelopes.html
+
+Generative Models Lecture - https://deepgenerativemodels.github.io/

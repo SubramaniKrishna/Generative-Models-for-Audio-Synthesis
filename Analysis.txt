@@ -1,0 +1,10 @@
+Potential Interesting Regions in Music Synthesis - 
+	1. Physical Modelling Synthesis - 
+		; You are modelling the dynamics of the underlying system that generates the waveform.
+		; Lot more freedom in controlling the generating parameters(modify the governing differential equation itself)
+		; Digital Waveguide Synthesis
+	2. Stochastic Modelling Synthesis - 
+		; Model based on spectrum(short time) of the sound
+		; (sine + noise + transients)
+		; Effects(Processing)
+		; Perceptually closer to ear(Harmonic Analyzer)

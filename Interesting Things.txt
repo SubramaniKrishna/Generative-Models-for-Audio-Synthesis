@@ -1,0 +1,6 @@
+1. Principal Component Synthesis
+2. Morphing
+3. STK synthesis toolkit, KS, tubes membranes(C++)
+4. FAIR(style transfer in music, 2018)
+5. manaswimishra17@gmail.com
+6. Dynamic programming for pitch
