@@ -11,3 +11,5 @@ Spectral Envelopes - http://recherche.ircam.fr/anasyn/schwarz/da/specenv/Spectra
 Generative Models Lecture - https://deepgenerativemodels.github.io/
 
 Papers that cite Magenta Work - https://www.semanticscholar.org/paper/Neural-Audio-Synthesis-of-Musical-Notes-with-Engel-Resnick/595a23ab15bf32983b1d233ceca47b2146fb64e6?tab=abstract&citingPapersSort=is-influential&citingPapersLimit=10&citingPapersOffset=50&citedPapersSort=is-influential&citedPapersLimit=10&citedPapersOffset=0
+
+Instantaneuos Frequency and Phase - http://musicweb.ucsd.edu/~sdubnov/Mu176/ClassTalks/ClassTalk2.pdf
