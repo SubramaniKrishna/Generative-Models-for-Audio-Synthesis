@@ -9,6 +9,8 @@
 	7. Spectral Envelope Estimation and Representation for Sound Analysis–Synthesis
 	8. AUTOMATIC TIMBRAL MORPHING OF MUSICAL INSTRUMENT SOUNDS BY HIGH-LEVEL DESCRIPTORS
 	9. Perceptual evaluations of synthesized musical instrument tones
-	10. AUTOMATIC TIMBRAL MORPHING OF MUSICAL INSTRUMENT SOUNDS BY HIGH-LEVEL DESCRIPTORS
-	11. Creating Music by Listening
-	12. Perceptual Synthesis Engine: An Audio-Driven Timbre Generator
+	10. Creating Music by Listening
+	11. Perceptual Synthesis Engine: An Audio-Driven Timbre Generator
+	12. AUTOMATIC AUDIO MORPHING
+	13. Perceptual scaling of synthesized musical timbres: Common dimensions, specificities, and latent subject classes
+	14. Multidimensional perceptual scaling of musical timbres(JM Grey's original work on MDS)

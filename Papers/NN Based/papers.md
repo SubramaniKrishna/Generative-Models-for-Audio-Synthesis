@@ -27,3 +27,4 @@
 		- Dataset - NSynth
 	14. GENERATIVE TIMBRE SPACES: REGULARIZING VARIATIONAL AUTO-ENCODERS WITH PERCEPTUAL METRICS - Generate Latent Spaces using VAE's, analyze the statistics of these spaces, possibility of synthesis directly from these spaces.
 		- Dataset - SOL(Availability doubtful?)
+	15. Adversarial Generation of Time-Frequency Features with application in audio synthesis
