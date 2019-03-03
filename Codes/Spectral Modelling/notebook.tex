@@ -282,6 +282,13 @@
     
     \section{Spectral Modeling Synthesis}\label{spectral-modeling-synthesis}
 
+Papers read - 1. A system for sound analysis based on Sinusoidal +
+stochastic decomposition(Prof. Xavier's
+thesis)\textless{}1,2,3,4\textgreater{} 2. Morphing guided by
+perception\textless{}5,6,7,8,12\textgreater{} 3. Creative
+Music\textless{}10,11\textgreater{} 4. Perception Studies using
+MDS\textless{}9,13,14\textgreater{}
+
     \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \paragraph{Prof. Xaviers Thesis}\label{prof.-xaviers-thesis}
@@ -754,7 +761,7 @@ For sound examples, visit
     What is \textbf{Morphing}?\\
 - Blurring Distinction between \textbf{Source} and \textbf{Target} -
 Somewhat like creating \textbf{hybrid} musical instruments\\
-- Would like to idelly perform \textbf{Perceptually Linear}
+- Would like to ideally perform \textbf{Perceptually Linear}
 transformations - The morphed sound should not simply sound like a
 mixture of sounds(the ear can distinguish in such cases). It should
 rather sound like a single \textbf{entity}
@@ -840,6 +847,131 @@ Morphing
 Characteristics for each morph value - Complicated and very subjective -
 Proposed Objective error function(assuming linearity, essentially the
 MSE)
+
+    \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\paragraph{Spectral Envelope Estimation and Representation for Sound
+Analysis--Synthesis}\label{spectral-envelope-estimation-and-representation-for-sound-analysissynthesis}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+    What is it - Envelope of magnitude of Short Time Spectrum(STS) 1. Speak
+about \textbf{Spectral Envelopes} in sound analysis and synthesis. 2.
+Linked to perception, and how they capture \textbf{important properties}
+of sound. 3. Challenges - Not east to estimate and represent them
+
+    What you want - 1. Envelope fit - Links the peaks of partials 2.
+Smoothness - should not oscillate wildly, just give a rough idea of the
+shape 3. Adaptation to fast spectral variations
+
+    Methods of Estimation - 1. Linear predictive coding 2. Cepstrum 3.
+Discrete cepstrum
+
+What is wanted - 1. Precision 2. Stability(like BIBO, small changes in
+data should give small changes in output) 3. Locality in frequency -
+parameters should cause local, not global changes 4. Flexibility and
+ease of manipulations - Should be easily manipulable with tunable
+parameters 5. Speed of synthesis 6. Space in memory 7. Manual input -
+manual tuning/control
+
+Proposed Representations - 1. Filter coefficients 2. Sampled
+representation 3. Geomteric representation 4. Formants
+
+    What can be done with them - 1. Influence timbre 2. Enhance musical
+expressivity
+
+Link to webpage describing the above in detail -
+\href{http://recherche.ircam.fr/anasyn/schwarz/publications/icmc1999/se99-poster.html}{link}
+
+    \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\paragraph{AUTOMATIC TIMBRAL MORPHING OF MUSICAL INSTRUMENT SOUNDS BY
+HIGH-LEVEL
+DESCRIPTORS}\label{automatic-timbral-morphing-of-musical-instrument-sounds-by-high-level-descriptors}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+    Precursor to the second paper above.\\
+Speak about the importance of taking into account perception while
+morphing(go through paper highlights, most work is extension of 2
+
+    \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\paragraph{AUTOMATIC AUDIO MORPHING}\label{automatic-audio-morphing}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+    Automatic morphing from one sound to another - Sound represented in a
+multi-dimensional space - Axes represent features that
+\textbf{perceptually represent} the sound, in this case spectral shape
+and pitch - The axes are assumed to be orthogonal i.e. each axis can be
+transformed independent of the others - Morphing essentially represents
+interpolation in this space
+
+    One sound should \textbf{smoothly} change into another sound. The
+process is described below in the figure - \includegraphics{fig_12.PNG}
+1. A sound representation in the 'space'(in this case pitch and
+envelope) is obtained. 2. Matching(allignment) to allign relevant
+features 3. Interpolation, followed by reconstruction
+
+Spectrograms are used to encode the two axes(smooth spectrogram using
+MFCC's, followed by a pitch spectrogram)
+
+    The morphing - Linear interpolation between the matched features
+\includegraphics{fig_13.PNG} The signal is linearly interpolated in time
+from features of signal 1 to signal 2.
+
+    Future work - 1. Better repesentations 2. Better matching techniques 3.
+\textbf{Perceptually optimal interpolation functions}
+
+    \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\paragraph{Creative Music(Work by Tristan Jehan at MIT Media
+Lab)}\label{creative-musicwork-by-tristan-jehan-at-mit-media-lab}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+    What has he done - In his Masters thesis\textless{}11\textgreater{}, He
+has made what he calls a \textbf{hyperviolin} - An instrument whose
+sounds/timbre can be modified in realtime by modifiying parameters.
+Then, in his PhD thesis\textless{}10\textgreater{}, he creates a system
+which can basically \textbf{create} music from data.
+
+    \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+Msc Thesis - Audio Driven Timbre Generator Salient points - -
+\textbf{Little to no digital synthesis technology for non keyboard
+instruments}\{Potential Work area\} - Limitations in current systems are
+- 1. Quality 2. Control over synthesis 3. Instrument specific -
+Hyperviolin - 1. Takes musical performance data(audio + gesture) 2.
+Processing(can be in realtime) 3. Generation/Synthesis - They model
+\textbf{Physical Sound}, not the perceptual features(What they call
+\textbf{Timbre Model}) - \textbf{Almost no work done on
+perceptually-controlled sound synthesis}\{Potential Work area\} - Future
+work - 1. Algorithms that extract \textbf{better and new} perceptual
+features 2. Study the \textbf{evolution of parameters} rather than
+instantaneuos parameters i.e. take into account how parameters evolve in
+the piece and transform accordingly
+
+    \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+PhD Thesis - Creating Music by Listening - High degree of abstraction
+between sampled audio and mental perception of it. Authors propose to
+bridge this gap by modeling human perception and learning of music. -
+Composing new music by \textbf{recycling} pre-existing music. - Thinks
+of all possible audio signals as a space. Music is a very small subset
+with some structure in this space. The authors want to make an
+\textbf{intelligent search} in this space to \textbf{re-discover} music.
+
+    Interesting points - - Perceptual Synthesis Engine(MSc thesis work, SMS
++ Perception) -\textgreater{} Decompose audio to parameters(frequency,
+amplitude) and their perceptual correlates(instantaneuos pitch,
+loudness, brightness), then learn relation between two data - Use other
+metadata(besides audio) like acoustic, cultural editorial for
+retrieval\{Can we do for synthesis, study what kinds of metadata is
+available\}
+
+    \textbf{Music Cognition Machine} \includegraphics{fig_14.PNG}
 
 
     % Add a bibliography block to the postdoc
