@@ -29,3 +29,5 @@
 		- Dataset - SOL(Availability doubtful?)
 	15. Adversarial Generation of Time-Frequency Features with application in audio synthesis
 	16. GANSYNTH: ADVERSARIAL NEURAL AUDIO SYNTHESIS
+	17. WAVENET: A GENERATIVE MODEL FOR RAW AUDIO
+	18. Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders
