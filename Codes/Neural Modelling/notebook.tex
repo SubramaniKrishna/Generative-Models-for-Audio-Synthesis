@@ -468,9 +468,9 @@ capture full data distribution
 
     \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\subsubsection{TIMBRETRON: AWAVENET(CYCLEGAN(CQT(AUDIO))) PIPELINE FOR
+\subsubsection{TIMBRETRON: A WAVENET(CYCLEGAN(CQT(AUDIO))) PIPELINE FOR
 MUSICAL TIMBRE
-TRANSFER}\label{timbretron-awavenetcyclegancqtaudio-pipeline-for-musical-timbre-transfer}
+TRANSFER}\label{timbretron-a-wavenetcyclegancqtaudio-pipeline-for-musical-timbre-transfer}
 
 \href{http://www.cs.toronto.edu/~huang/TimbreTron/index.html}{Video} ***
 
@@ -618,6 +618,279 @@ conditioning variable, which encodes information about the waveform
 
 Major Limitation - - Unable to fully capture global context due to
 memory constraint(open problem)
+
+    \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsubsection{GENERATIVE TIMBRE SPACES:REGULARIZING VARIATIONAL
+AUTO-ENCODERS WITH PERCEPTUAL
+METRICS}\label{generative-timbre-spacesregularizing-variational-auto-encoders-with-perceptual-metrics}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\href{https://acids-ircam.github.io/variational-timbre/}{Audio Examples}
+
+    \begin{itemize}
+\tightlist
+\item
+  Issues with current generative models -
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    Black box(no knowledge of inner functioning)
+  \item
+    Not \textbf{perceptually relevant} i.e. the representation space
+    need not correlate with \textbf{timbre}
+  \end{enumerate}
+\item
+  In this paper, the authors go one step ahead to enforce some kind of
+  structure into the learnt space by incorporating \textbf{perceptual
+  ratings from timbre studies} to \textbf{regularize the organization of
+  this space}
+\end{itemize}
+
+    \begin{figure}
+\centering
+\includegraphics{fig_06.PNG}
+\caption{Timbre Spaces}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  The Regularization enforces some notion of \textbf{similarity} in the
+  learned space.
+\item
+  The authors evaluat multiple TF representations, and concluded that
+  \textbf{Non-Stationary Gabor Transform}
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    correlates the most with the timbre space
+  \item
+    offered best quality of synthesis This can be attributed to NSGT
+    using a logarithmic scale with distribution well spread along the
+    axis(more uniform input to model better than non-uniform input
+    provided by STFT and DCT, which ony has information in lower bands)
+  \end{enumerate}
+\item
+  \{VAE vs other auto-encoders\}Unlike conventional autoencoders which
+  do not enforce any structure on the latent variable they try to learn,
+  Variational Autoencoders enforce a Gaussian structure to it i.e.
+  \(z ~ N(0,I)\). Thus, by forcing the latent variable to be independent
+  of each other, they might be able to control individual aspects of
+  timbre.
+\item
+  Besides enforcing structure just on the space, the authors study
+  synthesis along paths, which allows for continuous evolution of timbre
+\end{itemize}
+
+    \begin{itemize}
+\item
+  Major issues with previous timbre space studies -
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    Fixed spaces that must be recalculated every time
+  \item
+    Non-invertible mappings
+  \item
+    Only depends on some kind of distance between the observations, and
+    no apparent structure in the topolgy of the space itself.
+  \end{enumerate}
+\item
+  Use of t-Stochastic Neighbour Embedding to compute a \textbf{Target
+  Space}, which is like a regularization parameter during training to
+  enforce structure onto the latent space.
+\item
+  Future work - Perform perceptual experiments to indeed confirm that
+  the z-space topology is perceptually relevant.
+\end{itemize}
+
+    \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsubsection{AUTOENCODERS FOR MUSIC SOUND SYNTHESIS:A COMPARISON OF
+LINEAR, SHALLOW,DEEP AND VARIATIONAL
+MODELS}\label{autoencoders-for-music-sound-synthesisa-comparison-of-linear-shallowdeep-and-variational-models}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+    \begin{itemize}
+\tightlist
+\item
+  Comparison of Shallow, Deep and Linear Auto-encoders for sound
+  re-synthesis
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics{fig_07.PNG}
+\caption{Flow}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  Interestingly, PCA outperforms shallow AE's
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  An interesting thing the authors do is to use the original phase of
+  the audio as the final phase in the reconstruction process. Maybe in
+  the absence of anything else, this might be an interesting thing to
+  try.
+\item
+  Variational AE's outperform traditional bottleneck AE's due to latent
+  variables ability to control multiple dimensions
+\item
+  Authors study the use of the Itakuro Saito Distance as a perceptual
+  distance metric because of its \textbf{scale invariance property}.
+  However, it led to poor MSE performace and poor audio quality as well.
+\item
+  Possible future work includes -
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    Better understanding the loss function and its importance in
+    enforcing the structure onto the latent space
+  \item
+    Further studying a better metric (Like the ISD)
+  \item
+    Dynamic models vs Generative models to take into account temporal
+    aspects\{The question I have is whether using the TF representation
+    as in input is the same as using a recurrent model to learn the
+    temporal relations i.e. can the generator learn the inherent TF
+    representation through the input or should it be enforced by the
+    architecture\}
+  \end{enumerate}
+\end{itemize}
+
+    \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsubsection{Learning Latent Representations of Music to Generate
+Interactive Musical
+Palettes}\label{learning-latent-representations-of-music-to-generate-interactive-musical-palettes}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+    \begin{itemize}
+\tightlist
+\item
+  Discuss learning \textbf{effective mappings} by efficiently utilizing
+  the latent space
+\item
+  Desire smoothness(shifting point in latent-space corresponds to small
+  shift in output) + feasibility criteria(latent space should map to
+  points in audio space that are semantically meaningful)
+\item
+  The above allow us to \textbf{interpolate} in the audio space by
+  corresponding interpolations in the latent space(morphing)
+\item
+  Authors use \textbf{bag-of-features} to train an auto-encoder to
+  construct a latent space\{Interesting to try out along with PCA as a
+  starting point\}
+\end{itemize}
+
+    \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\subsubsection{Sounderfeit: Cloning a Physical Model using a Conditional
+Adversarial
+Autoencoder}\label{sounderfeit-cloning-a-physical-model-using-a-conditional-adversarial-autoencoder}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+    \begin{itemize}
+\tightlist
+\item
+  Authors propose an \textbf{Adversarial Autoencoder} trained on
+  \textbf{Physical Model Parameters} for use in \textbf{parameter
+  estimation and synthesis}
+\item
+  Authors study how well Autoencoders can \textbf{mimic/clone} the
+  synthesis operation along with enforcing structure on latent space for
+  further control.
+\item
+  This work essentially generates \textbf{audio frames}(as opposed to
+  samples(Wavenet) or specgrams(GAN's)
+\item
+  Propose the use of \textbf{Adversarial Autoencoder}(GAN + VAE i.e.
+  regularize the z-space using a GAN) because of foolowing -
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    Ensure that full latent space is used efficiently thus enabling us
+    to perform interpolation
+  \item
+    Reduce correlation between parameters(similar to VAE, they control
+    independent aspects)
+  \end{enumerate}
+
+  \includegraphics{fig_08.PNG}
+\item
+  GAN's \textbf{conditioned} on known parameters can control the output.
+  The latent space captures the variance which cannot completely be
+  described by the conditioning variables.
+\item
+  Thus, the \textbf{black box model} aims to mimic two transfer
+  functions, one from the parameters to signal, and other from signal to
+  parameters.
+\item
+  Physical models were chosen for \textbf{their ability to represent
+  complex sounds with few variables}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  Why data driven approaches might be better off(intuition)?
+  -\textgreater{} When you perform a transformation to a parameter
+  space(FT, Physical Modeling, Spectral Modeling etc.), you cannot
+  perfectly isolate its generation based on independent parameters in
+  your latent space. Hence, based on the structure of the latent space,
+  you should let your model itself perform the transformation into the
+  appropriate space.
+\item
+  \textbf{Spectral irregularity} to judge the similarity of sounds.
+\item
+  Salient points in this model -
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    Represent sound with relatively few parameters(2/3) to learn a
+    \textbf{minimal encoding}
+  \item
+    Better understand data-parameter relation through model
+  \end{enumerate}
+\item
+  \textbf{Learned Conditional Autoencoding}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Impose a structure in the Latent Space related to parameter
+    estimation by adding a regularization term(as opposed to providing
+    the conditional parameters as an input to the autoencoder
+  \end{itemize}
+\item
+  Network \includegraphics{fig_09.PNG}
+\item
+  Main advantage of this over VAE - VAE enforce gaussian structure onto
+  latent space, using an adversarial approach, you can fit any desired
+  distribution!
+\end{itemize}
 
 
     % Add a bibliography block to the postdoc
