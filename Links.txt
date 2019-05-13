@@ -17,3 +17,9 @@ Instantaneuos Frequency and Phase - http://musicweb.ucsd.edu/~sdubnov/Mu176/Clas
 Interesting articles concerning synthesis - https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4117922
 
 Physical Audio signal processing - https://ccrma.stanford.edu/~jos/pasp/
+
+Computer Music Course - http://www.indiana.edu/~emusic/etext/synthesis/chapter4_terms.shtml
+
+120 years of computer music - https://120years.net/
+
+Physical Modeling of Stringed Instruments - https://www.cim.mcgill.ca/~clark/nordmodularbook/nm_physical.html
